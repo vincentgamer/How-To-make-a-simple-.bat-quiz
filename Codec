@@ -1,0 +1,71 @@
+@echo off
+:Start
+cls
+echo What is you're name?
+set /p name=
+echo Hello %name% youre stupid, lets begin this test, stupid!
+ping localhost>nul
+goto startquiz
+
+:startquiz
+cls
+echo First Question! How many quarters are in a US Dollar? 
+echo.
+echo 1) 1
+echo 2) 2
+echo 3) 3
+echo 4) 4
+set /p A1=
+if not %A1% == 4 goto incorrect1
+if %A1% == 4 goto correct1
+
+:incorrect1
+cls
+echo That answer was wrong, you're stupid, Try again!
+ping localhost>nul
+goto Startquiz
+
+:correct1
+cls
+echo You are right, but still stupid! Time for the next question!
+ping localhost>nul
+goto q2
+
+:Playagain
+cls
+echo Would you like to play again?
+echo.
+echo 1) Yea
+echo 2) Nah, Man
+set /p A1=
+if %A1% == 1 goto Startquiz
+if %A1% == 2 goto Goodbye
+
+:Goodbye
+cls
+echo Goodbye, stupid
+ping localhost>nul
+
+:q2
+cls
+echo Is Vincent cooler than you?
+echo.
+echo 1) Yes
+echo 2) Mabye
+echo 3) No
+set /p A1=
+if not %A1% == 1 goto incorrect2
+if %A1% == 1 goto correct2
+
+:correct2
+cls
+echo Correct! You are awesome!
+ping localhost>nul
+goto Playagain
+
+:incorrect2
+cls
+echo HOW DARE YOU DISRESPECT THE CODER! LEAVE MY PRESENCE AT ONCE!
+ping localhost>nul
+pause
+
